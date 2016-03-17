@@ -5,6 +5,7 @@ import org.hendrix.core.RunnerBuilder;
 import org.hendrix.domain.ResultStatus;
 import org.hendrix.reporter.ConsoleReporter;
 import org.hendrix.reporter.SimpleReporter;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -16,6 +17,11 @@ import static org.junit.Assert.assertEquals;
 @ContextConfiguration(classes = {AppConfig.class})
 public class SampleTest {
     private SimpleReporter simpleReporter;
+
+    @Before
+    public void setUp() throws Exception {
+        simpleReporter = new SimpleReporter();
+    }
 
     @Test
     public void sample() throws Exception {
