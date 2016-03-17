@@ -19,7 +19,7 @@ public class SampleTest {
     @Test
     public void sample() throws Exception {
         Runner runner = new CucumberRunnerBuilder()
-                .feature(ClassLoader.getSystemResourceAsStream("features/sample.feature"))
+                .feature(ClassLoader.getSystemResourceAsStream("features/simple.feature"))
                 .glue(SampleStepdefs.class)
                 .create();
 
@@ -31,7 +31,7 @@ public class SampleTest {
     @Test
     public void tags() throws Exception {
         Runner runner = new CucumberRunnerBuilder()
-                .feature(ClassLoader.getSystemResourceAsStream("features/sample.feature"))
+                .feature(ClassLoader.getSystemResourceAsStream("features/simple.feature"))
                 .tag("@zap")
                 .glue(SampleStepdefs.class)
                 .create();
@@ -73,7 +73,7 @@ public class SampleTest {
     public void multiGlue() throws Exception {
         Runner runner = new CucumberRunnerBuilder()
                 .feature(ClassLoader.getSystemResourceAsStream("features/spring.feature"))
-                .feature(ClassLoader.getSystemResourceAsStream("features/sample.feature"))
+                .feature(ClassLoader.getSystemResourceAsStream("features/simple.feature"))
                 .tag("@zap,@spring")
                 .glue(SpringStepdefs.class)
                 .glue(SampleStepdefs.class)

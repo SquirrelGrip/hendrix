@@ -97,8 +97,8 @@ public class ScenarioFactory {
         addFeature(new FileInputStream(fileName));
     }
 
-    public void addFeature(InputStream fileName) throws ParserException, IOException {
-        InputStreamReader in = new InputStreamReader(fileName, "UTF-8");
+    public void addFeature(InputStream inputStream) throws ParserException, IOException {
+        InputStreamReader in = new InputStreamReader(inputStream, "UTF-8");
         Feature feature = parser.parse(in);
         pickles.addAll(compiler.compile(feature));
     }

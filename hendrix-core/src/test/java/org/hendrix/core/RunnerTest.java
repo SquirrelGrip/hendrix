@@ -22,7 +22,7 @@ import static org.mockito.Mockito.*;
 @RunWith(MockitoJUnitRunner.class)
 public class RunnerTest {
 
-    private Runner testObj;
+    private Runner testSubject;
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
@@ -37,16 +37,16 @@ public class RunnerTest {
         scenarios = Lists.newArrayList();
         when(scenarioFactory.createScenarios()).thenReturn(scenarios);
 
-        testObj = new Runner(scenarioFactory);
+        testSubject = new Runner(scenarioFactory);
     }
 
     @Test
     public void run_WhenSinglePassStepScenario() throws Exception {
         scenarios.add(ScenarioFixture.createScenarioWithSteps(ScenarioFixture.createPassStepCommand()));
 
-        testObj.run();
+        testSubject.run();
 
-        assertEquals(ResultStatus.PASS, testObj.getResults().getResultStatus());
+        assertEquals(ResultStatus.PASS, testSubject.getResults().getResultStatus());
         verify(scenarioFactory).createScenarios();
         verifyZeroInteractions(reporter);
     }
@@ -55,9 +55,9 @@ public class RunnerTest {
     public void run_WhenDoublePassStepScenario() throws Exception {
         scenarios.add(ScenarioFixture.createScenarioWithSteps(ScenarioFixture.createPassStepCommand(), ScenarioFixture.createPassStepCommand()));
 
-        testObj.run();
+        testSubject.run();
 
-        assertEquals(ResultStatus.PASS, testObj.getResults().getResultStatus());
+        assertEquals(ResultStatus.PASS, testSubject.getResults().getResultStatus());
         verify(scenarioFactory).createScenarios();
         verifyZeroInteractions(reporter);
     }
@@ -66,9 +66,9 @@ public class RunnerTest {
     public void run_WhenPassingStepThenFailStepScenario() throws Exception {
         scenarios.add(ScenarioFixture.createScenarioWithSteps(ScenarioFixture.createPassStepCommand(), ScenarioFixture.createFailStepCommand()));
 
-        testObj.run();
+        testSubject.run();
 
-        assertEquals(ResultStatus.FAIL, testObj.getResults().getResultStatus());
+        assertEquals(ResultStatus.FAIL, testSubject.getResults().getResultStatus());
         verify(scenarioFactory).createScenarios();
         verifyZeroInteractions(reporter);
     }
@@ -77,9 +77,9 @@ public class RunnerTest {
     public void run_WhenFailStepThenPassStepScenario() throws Exception {
         scenarios.add(ScenarioFixture.createScenarioWithSteps(ScenarioFixture.createFailStepCommand(), ScenarioFixture.createPassStepCommand()));
 
-        testObj.run();
+        testSubject.run();
 
-        assertEquals(ResultStatus.FAIL, testObj.getResults().getResultStatus());
+        assertEquals(ResultStatus.FAIL, testSubject.getResults().getResultStatus());
         verify(scenarioFactory).createScenarios();
         verifyZeroInteractions(reporter);
     }
@@ -88,8 +88,8 @@ public class RunnerTest {
     public void run_WhenReporterIsAdded() throws Exception {
         scenarios.add(ScenarioFixture.createScenarioWithSteps(ScenarioFixture.createPassStepCommand()));
 
-        testObj.addReporter(reporter);
-        testObj.run();
+        testSubject.addReporter(reporter);
+        testSubject.run();
 
         verify(reporter).close();
         verify(reporter).reportOne(any(ScenarioResult.class));
