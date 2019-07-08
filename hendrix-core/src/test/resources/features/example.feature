@@ -1,4 +1,4 @@
-Feature:
+
 
   Scenario Outline: add
     Given <x> plus <y> equals <result>

@@ -2,12 +2,12 @@ package org.hendrix.core;
 
 import com.google.common.collect.Lists;
 import org.hendrix.domain.Scenario;
+import org.hendrix.gherkin.Pickle;
 import org.hendrix.step.StepCommand;
 import org.junit.Test;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.mockito.Mock;
 import org.junit.runner.RunWith;
-import pickles.Pickle;
 
 import java.util.List;
 

@@ -9,15 +9,11 @@ import org.hendrix.domain.Scenario;
 import org.hendrix.factory.DefaultJavaObjectFactory;
 import org.hendrix.factory.ObjectFactory;
 import org.hendrix.factory.SpringObjectFactory;
+import org.hendrix.gherkin.Compiler;
+import org.hendrix.gherkin.*;
+import org.hendrix.gherkin.exception.ParserException;
 import org.hendrix.step.StepCommand;
 import org.hendrix.step.StepDefinition;
-import gherkin.Parser;
-import gherkin.ParserException;
-import gherkin.ast.Feature;
-import gherkin.compiler.Compiler;
-import pickles.Pickle;
-import pickles.PickleStep;
-import pickles.PickleTag;
 
 import java.io.FileInputStream;
 import java.io.IOException;

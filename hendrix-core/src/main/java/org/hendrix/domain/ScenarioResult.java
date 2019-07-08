@@ -1,6 +1,7 @@
 package org.hendrix.domain;
 
-import pickles.Pickle;
+
+import org.hendrix.gherkin.Pickle;
 
 import java.util.List;
 

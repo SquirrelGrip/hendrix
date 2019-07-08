@@ -2,8 +2,8 @@ package org.hendrix.domain;
 
 import com.google.common.collect.Lists;
 import org.hendrix.core.BeforeScenarioMethod;
+import org.hendrix.gherkin.Pickle;
 import org.hendrix.step.StepCommand;
-import pickles.Pickle;
 
 import java.util.Iterator;
 import java.util.List;

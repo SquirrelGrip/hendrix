@@ -7,8 +7,9 @@ import org.hendrix.step.decorator.JoinAfter;
 import org.hendrix.step.decorator.JoinBefore;
 import org.hendrix.step.decorator.RunOnce;
 import org.hendrix.util.WaitForCondition;
-import org.joda.time.LocalDateTime;
 import org.springframework.test.context.ContextConfiguration;
+
+import java.time.LocalDateTime;
 
 @ContextConfiguration(classes = {AppConfig.class})
 public class ForkJoinStepdefs {
@@ -24,11 +25,11 @@ public class ForkJoinStepdefs {
     @Step("^a wait of (.*) seconds$")
     public void secondsToWait(int seconds) {
         this.seconds = seconds;
-        final LocalDateTime waitUntil = new LocalDateTime().plusSeconds(seconds);
+        final LocalDateTime waitUntil = LocalDateTime.now().plusSeconds(seconds);
         WaitForCondition.waitFor(new WaitForCondition.Condition() {
             @Override
             public boolean getResult() {
-                return new LocalDateTime().isAfter(waitUntil);
+                return LocalDateTime.now().isAfter(waitUntil);
             }
         }, 15);
         System.out.println("Waited " + seconds + " seconds.");

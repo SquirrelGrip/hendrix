@@ -2,7 +2,7 @@ package org.hendrix.step;
 
 import org.hendrix.domain.Result;
 import org.hendrix.domain.Scenario;
-import pickles.PickleStep;
+import org.hendrix.gherkin.PickleStep;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletionService;

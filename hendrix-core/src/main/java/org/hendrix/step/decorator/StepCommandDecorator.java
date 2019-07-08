@@ -2,9 +2,9 @@ package org.hendrix.step.decorator;
 
 import org.hendrix.domain.Result;
 import org.hendrix.domain.Scenario;
+import org.hendrix.gherkin.PickleStep;
 import org.hendrix.step.StepCommand;
 import org.hendrix.step.StepDefinition;
-import pickles.PickleStep;
 
 import java.util.concurrent.CompletionService;
 import java.util.concurrent.Future;

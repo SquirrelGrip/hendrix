@@ -3,7 +3,7 @@ package org.hendrix.step;
 import com.google.common.collect.Sets;
 import com.google.common.util.concurrent.SettableFuture;
 import org.hendrix.annotation.Step;
-import pickles.PickleStep;
+import org.hendrix.gherkin.PickleStep;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;

@@ -3,13 +3,13 @@ package org.hendrix.core;
 import com.google.common.collect.Lists;
 import org.hendrix.annotation.Step;
 import org.hendrix.domain.Scenario;
+import org.hendrix.gherkin.Pickle;
+import org.hendrix.gherkin.PickleLocation;
+import org.hendrix.gherkin.PickleStep;
+import org.hendrix.gherkin.PickleTag;
 import org.hendrix.step.StepCommand;
 import org.hendrix.step.StepDefinition;
 import org.hendrix.step.SimpleStepCommand;
-import pickles.Pickle;
-import pickles.PickleLocation;
-import pickles.PickleStep;
-import pickles.PickleTag;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class ScenarioFixture {
 
     public static StepCommand createPassStepCommand() {
         try {
-            PickleStep failingPickleStep = new PickleStep("Given", "PASS", null, new PickleLocation(1, 1));
+            PickleStep failingPickleStep = new PickleStep("Given", "PASS", new PickleLocation(1, 1));
             Method method = ScenarioFixture.class.getMethod("pass");
             StepDefinition stepDefinition = new StepDefinition(method);
             return new SimpleStepCommand(stepDefinition, scenarioFixture, failingPickleStep);
@@ -53,7 +53,7 @@ public class ScenarioFixture {
 
     public static StepCommand createFailStepCommand() {
         try {
-            PickleStep failingPickleStep = new PickleStep("Given", "FAIL", null, new PickleLocation(1, 1));
+            PickleStep failingPickleStep = new PickleStep("Given", "FAIL", new PickleLocation(1, 1));
             Method method = ScenarioFixture.class.getMethod("fail");
             StepDefinition stepDefinition = new StepDefinition(method);
             return new SimpleStepCommand(stepDefinition, scenarioFixture, failingPickleStep);

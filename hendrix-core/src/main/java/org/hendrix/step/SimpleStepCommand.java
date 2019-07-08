@@ -5,9 +5,9 @@ import org.hendrix.core.IgnoredException;
 import org.hendrix.domain.Result;
 import org.hendrix.domain.Scenario;
 import org.hendrix.domain.StepResult;
+import org.hendrix.gherkin.PickleStep;
 import org.hendrix.util.TypeCoercer;
 import org.junit.AssumptionViolatedException;
-import pickles.PickleStep;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.CompletionService;

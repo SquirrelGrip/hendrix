@@ -3,13 +3,13 @@ package org.hendrix.reporter;
 import org.hendrix.domain.Result;
 import org.hendrix.domain.ScenarioResult;
 import org.hendrix.domain.StepResult;
+import org.hendrix.gherkin.Pickle;
+import org.hendrix.gherkin.PickleStep;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import pickles.Pickle;
-import pickles.PickleStep;
 
 import java.util.ArrayList;
 import java.util.List;

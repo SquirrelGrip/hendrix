@@ -1,6 +1,6 @@
 package org.hendrix.domain;
 
-import pickles.PickleStep;
+import org.hendrix.gherkin.PickleStep;
 
 public class StepResult {
     private final PickleStep pickleStep;
