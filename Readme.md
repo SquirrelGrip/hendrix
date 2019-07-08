@@ -1,5 +1,5 @@
 
-### Garnish you Hendrix with a Cucumber.
+### Make your cucumber more potent with a dash of Hendrix 
 
 Examples
 ========
